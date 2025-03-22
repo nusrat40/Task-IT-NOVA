@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import SubscriptionForm from './component/SubscriptionForm'
+import ConfirmationPage from './component/ConfirmationPage'
 
 function App() {
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-     <SubscriptionForm></SubscriptionForm>
-    </div>
+    <Router>
+    <Routes>
+      <Route path="/" element={<SubscriptionForm />} />
+      <Route path="/confirm" element={<ConfirmationPage />} />
+    </Routes>
+  </Router>
   )
 }
 
